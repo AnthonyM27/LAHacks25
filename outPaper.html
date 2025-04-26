@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Introduces a general-purpose framework for image-to-image translation tasks, where the goal is to learn a mapping between an input image and an output image (e.g., semantic labels to photographs, edges to photographs, black & white to color).</li>
+        <li>Proposes using Conditional Generative Adversarial Networks (cGANs) as the underlying model. The generator learns the mapping conditioned on the input image, and the discriminator learns to distinguish real image pairs (input, real_output) from fake pairs (input, generated_output).</li>
+        <li>The Generator network architecture is based on a "U-Net", which uses an encoder-decoder structure with skip connections between corresponding layers in the encoder and decoder. These skip connections help preserve low-level details from the input to the output.</li>
+        <li>Introduces a novel Discriminator architecture called "PatchGAN". Instead of classifying the entire output image as real or fake, the PatchGAN classifies overlapping N x N patches of the image as real or fake. This focuses the discriminator on high-frequency details and local realism, is computationally cheaper, and can be applied to arbitrarily large images.</li>
+        <li>The objective function combines the conditional adversarial loss (encouraging realistic outputs) with an L1 loss between the generated image and the ground truth target image. The L1 loss (mean absolute error) is preferred over L2 (mean squared error) as it encourages less blurring in the generated images.</li>
+        <li>Demonstrates the framework's effectiveness across a wide variety of tasks without needing manually engineered, task-specific loss functions, highlighting its generality. Tasks include synthesizing photos from label maps, reconstructing objects from edge maps, colorizing images, and transforming day images to night.</li>
+        <li>Evaluates the results using quantitative metrics (like FCN-scores for tasks involving semantic segmentation) and qualitative human perception studies via Amazon Mechanical Turk (AMT), where users often rated the generated images as highly realistic.</li>
+        <li>Shows that the combination of cGANs, U-Net generator, PatchGAN discriminator, and L1 loss produces high-quality results competitive with or superior to other methods on the benchmarked tasks.</li>
+    </ul>
+</body>
+</html>
