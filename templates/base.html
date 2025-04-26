@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}PaperTrail{% endblock %}</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Flash messages */
+        .flash.success {
+            background-color: #FDB515; /* Gold for success */
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .flash.error {
+            background-color: #E74C3C; /* Red for error */
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ECF0F1; /* Light gray background */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #003262; /* Dark Blue */
+            padding: 15px 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 50px; /* evenly spaced links */
+        }
+
+        .navbar a {
+            color: #FDB515; /* Gold */
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 20px;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .navbar a:hover {
+            background-color: #FDB515; /* Gold on hover */
+            color: #003262; /* Dark Blue text */
+        }
+
+        /* Content Area */
+        .content {
+            flex: 1;
+            padding: 40px;
+            text-align: center;
+        }
+
+        /* Headings */
+        h1, h2 {
+            color: #003262; /* Dark Blue */
+            margin-bottom: 20px;
+        }
+
+        /* Form Styling */
+        form {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 8px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+
+        input[type="file"]:hover {
+            border-color: #FDB515; /* Gold border on file input hover */
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #FDB515; /* Gold focus border */
+            background-color: #FFF8E1; /* Light Gold background */
+            outline: none;
+        }
+
+        /* Submit Button */
+        button[type="submit"] {
+            width: 100%;
+            background-color: #FDB515; /* Gold */
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #E67E22; /* Darker Gold on hover */
+        }
+
+        /* Link Button Styling */
+        .button-container a.button-link {
+            background-color: #FDB515; /* Gold */
+            color: white;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .button-container a.button-link:hover {
+            background-color: #FDB515; /* Darker Gold on hover */
+        }
+
+        /* Container for button links */
+        .button-container {
+            margin-top: 30px;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003262; /* Dark Blue */
+            font-size: 14px;
+            color: #FDB515; /* Gold text */
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="nav-links">
+        <a href="{{ url_for('home') }}">Dashboard</a>
+        <a href="{{ url_for('find_positions') }}">Find Positions</a>
+        <a href="{{ url_for('application_tracker') }}">Application Tracker</a>
+        <a href="{{ url_for('profile') }}">Profile</a>
+    </div>
+</div>
+
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+<footer>
+    PaperTrail &copy; 2025
+</footer>
+
+</body>
+</html>

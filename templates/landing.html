@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome - PaperTrail{% endblock %}
+
+{% block content %}
+<h1>Welcome to PaperTrail</h1>
+<p>Find research opportunities, track your applications, and grow your academic journey.</p>
+
+<div class="button-container">
+    <a href="{{ url_for('login') }}" class="button-link">Login</a>
+    <a href="{{ url_for('register') }}" class="button-link">Register</a>
+</div>
+{% endblock %}

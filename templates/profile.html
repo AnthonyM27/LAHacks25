@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Profile - PaperTrail{% endblock %}
+
+{% block content %}
+<h2>Complete Your Profile</h2>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<form action="{{ url_for('profile') }}" method="POST" enctype="multipart/form-data">
+    {% if not session.get('full_name') %}
+        <label for="full_name">Full Name:</label><br>
+        <input type="text" id="full_name" name="full_name" required><br><br>
+    {% else %}
+        <label for="full_name">Full Name:</label><br>
+        <input type="text" id="full_name" name="full_name" value="{{ session['full_name'] }}" readonly><br><br>
+    {% endif %}
+
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" name="email" value="{{ session['email'] if session.get('email') else '' }}" required><br><br>
+
+    <label for="phone_number">Phone Number:</label><br>
+    <input type="text" id="phone_number" name="phone_number" value="{{ session['phone_number'] if session.get('phone_number') else '' }}" required><br><br>
+
+    {% if 'resume.pdf' not in uploaded_files %}
+        <label for="resume">Resume (PDF):</label><br>
+        <input type="file" id="resume" name="resume" accept="application/pdf" required><br><br>
+    {% else %}
+        <div>
+            <strong>Resume: </strong> 
+            <a href="{{ url_for('static', filename='uploads/' + session['user'] + '/resume.pdf') }}" target="_blank">View PDF</a>
+            <br><br>
+            <button type="submit" name="replace_resume" style="background-color:blue; color:white; padding:5px 10px;">Replace Resume</button>
+        </div>
+    {% endif %}
+
+    {% if 'transcript.pdf' not in uploaded_files %}
+        <label for="transcript">Transcript (PDF):</label><br>
+        <input type="file" id="transcript" name="transcript" accept="application/pdf" required><br><br>
+    {% else %}
+        <div>
+            <strong>Transcript: </strong> 
+            <a href="{{ url_for('static', filename='uploads/' + session['user'] + '/transcript.pdf') }}" target="_blank">View PDF</a>
+            <br><br>
+            <button type="submit" name="replace_transcript" style="background-color:blue; color:white; padding:5px 10px;">Replace Transcript</button>
+        </div>
+    {% endif %}
+
+    <label for="letters">Letters of Recommendation (PDF):</label><br>
+    <input type="file" id="letters" name="letters" accept="application/pdf" multiple><br><br>
+
+    <label for="writing_samples">Writing Samples (PDF):</label><br>
+    <input type="file" id="writing_samples" name="writing_samples" accept="application/pdf" multiple><br><br>
+
+    <button type="submit">Save Profile</button>
+</form>
+
+<hr>
+
+<h3>Uploaded Files:</h3>
+
+{% if uploaded_files %}
+    <ul>
+    {% for file in uploaded_files %}
+        <li style="margin-bottom: 30px;">
+            <a href="{{ url_for('static', filename='uploads/' + session['user'] + '/' + file) }}" target="_blank">{{ file }}</a>
+            <br><br>
+
+            <div class="pdf-container">
+                <div class="loader">Loading PDF...</div>
+                <iframe src="{{ url_for('static', filename='uploads/' + session['user'] + '/' + file) }}" class="pdf-frame" style="width:100%; height:500px; border:1px solid #ccc; display:none;"></iframe>
+            </div>
+
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No files uploaded yet.</p>
+{% endif %}
+{% endblock %}
