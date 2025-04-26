@@ -39,35 +39,47 @@
             flex-direction: column;
         }
 
-        /* Navbar Styling */
         .navbar {
-            background-color: #003262; /* Dark Blue */
+            background-color: #003262; /* dark blue */
             padding: 15px 30px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+        }
+
+        .navbar-left .logo {
+            font-size: 32px; /* bump it up from 26px to 32px */
+            font-weight: 800;
+            color: #FDB515; /* gold */
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .navbar-left .logo:hover {
+            color: #ffffff; /* white on hover */
         }
 
         .nav-links {
             display: flex;
-            gap: 50px; /* evenly spaced links */
+            gap: 40px;
         }
 
         .navbar a {
-            color: #FDB515; /* Gold */
+            color: #ffffff;
             text-decoration: none;
             font-weight: 600;
-            font-size: 20px;
+            font-size: 18px;
             padding: 10px 15px;
             transition: all 0.3s ease;
             border-radius: 8px;
         }
 
         .navbar a:hover {
-            background-color: #FDB515; /* Gold on hover */
-            color: #003262; /* Dark Blue text */
+            background-color: #FDB515;
+            color: #003262;
         }
+
 
         /* Content Area */
         .content {
@@ -166,11 +178,118 @@
             color: #FDB515; /* Gold text */
             box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
         }
+
+        form input[type="text"],
+        form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 8px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .generated-letter {
+            margin-top: 40px;
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .generated-letter h2 {
+            margin-bottom: 20px;
+            color: #003262;
+        }
+
+        .generated-letter p {
+            white-space: pre-line;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .download-btn {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #FDB515;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #E67E22;
+        }
+
+        .letter-card {
+            background-color: #ffffff;
+            padding: 30px;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            max-width: 700px;
+            text-align: left;
+        }
+
+        .letter-card h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #003262; /* dark blue for title */
+        }
+
+        .letter-card p {
+            white-space: pre-wrap; /* keeps line breaks */
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .resources-section {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .resources-section h2 {
+            font-size: 28px;
+            color: #003262;
+            margin-bottom: 30px;
+        }
+
+        .videos-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .video {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            width: 380px;
+            text-align: center;
+        }
+
+        .video p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
     </style>
 </head>
 <body>
 
+
 <div class="navbar">
+    <div class="navbar-left">
+        <a href="{{ url_for('home') }}" class="logo">PaperTrail</a>
+    </div>
     <div class="nav-links">
         <a href="{{ url_for('home') }}">Dashboard</a>
         <a href="{{ url_for('find_positions') }}">Find Positions</a>
@@ -178,6 +297,8 @@
         <a href="{{ url_for('profile') }}">Profile</a>
     </div>
 </div>
+
+
 
 <div class="content">
     {% block content %}{% endblock %}

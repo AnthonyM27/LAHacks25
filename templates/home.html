@@ -3,15 +3,203 @@
 {% block title %}Dashboard - PaperTrail{% endblock %}
 
 {% block content %}
-<h2>Welcome back, {{ user }}!</h2>
+<h1>Welcome back!</h1>
 
-<div style="margin-top: 40px;">
-    <p>This is your PaperTrail dashboard. 🚀</p>
-    <p>Here you will soon be able to:</p>
-    <ul style="list-style: none; padding: 0;">
-        <li>📚 Find open research positions</li>
-        <li>📝 Track your applications</li>
-        <li>👤 Manage your profile and documents</li>
-    </ul>
+<!-- Weekly Application Tracker -->
+<div class="tracker-container">
+    <div class="tracker-left">
+        <h2>Weekly Application Goal</h2>
+
+        <div class="progress-wrapper">
+            <!-- Regular Progress Bar -->
+            <div class="progress-bar-container">
+                <div class="progress-bar-background">
+                    <div class="progress-bar" style="width: {{ progress }}%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Goal input placed on the right side of the progress bar -->
+        <form method="POST" class="goal-form">
+            <input type="text" name="weekly_goal" value="{{ session['weekly_goal'] }}" placeholder="Set your goal..." required>
+            <button type="submit" name="set_goal">Set Goal</button>
+        </form>
+
+        <div class="progress-info">
+            <p>{{ session['applications_submitted'] }} / {{ session['weekly_goal'] }} applications submitted</p>
+            <p class="motivation">{{ motivation }}</p>
+        </div>
+
+        <form method="POST" style="margin-top: 20px;">
+            <button type="submit" name="log_application">Log New Application</button>
+        </form>
+    </div>
+
+    <div class="tracker-right">
+        <h3>Weekly Stats</h3>
+        <ul>
+            <li><strong>Applications Submitted:</strong> {{ session['applications_submitted'] }}</li>
+            <li><strong>Interviews Scheduled:</strong> {{ session['interviews_scheduled'] }}</li>
+            <li><strong>Saved Posts:</strong> {{ session['saved_posts'] }}</li>
+        </ul>
+
+        <div class="cover-letter-help">
+            <h3>Need Help with Your Cover Letter?</h3>
+            <p>We can guide you through the process of writing a professional cover letter tailored to your job applications!</p>
+            <a href="{{ url_for('cover_letter') }}" class="button-link">Get Help Now</a>
+        </div>
+
+        <div class="resources-section">
+            <h2>Helpful Resources</h2>
+            <div class="videos-container">
+                <div class="video">
+                    <iframe width="360" height="215" src="https://www.youtube.com/embed/BYUy1yvjHxE" title="Create Your Resume for Google: Tips and Advice" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>How to Write a Research Resume</p>
+                </div>
+                <div class="video">
+                    <iframe width="360" height="215" src="https://www.youtube.com/embed/spsHJ-VGjUs" title="How to get Lab Research for College and Grad Students" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    <p>How to Find Research Opportunities</p>
+                </div>
+            </div>
+        </div>
+    </div> 
 </div>
+
+<style>
+    .tracker-container {
+        background: white;
+        padding: 30px;
+        margin: 30px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        max-width: 1000px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        font-size: 18px;
+    }
+
+    .tracker-left {
+        flex: 2;  /* Slightly smaller width for the progress tracker */
+        padding-right: 20px;
+    }
+
+    .tracker-right {
+        flex: 2;  /* Matching the width of the progress tracker */
+        padding-left: 20px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .progress-wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .progress-bar-container {
+        width: 100%;
+        height: 30px;
+        background-color: #e0e0e0;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .progress-bar-background {
+        width: 100%;
+        height: 100%;
+        background-color: #e0e0e0;
+        border-radius: 20px;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background-color: #FDB515;
+        border-radius: 20px;
+    }
+
+    .goal-form input[type="text"] {
+        width: 80px;
+        padding: 10px;
+        margin-left: 10px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+
+    .goal-form button {
+        padding: 12px;
+        background-color: #3B7EA1;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .goal-form button:hover {
+        background-color: #E67E22;
+    }
+
+    .progress-info {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .motivation {
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #F39C12;
+    }
+
+    .tracker-right ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .tracker-right ul li {
+        margin-bottom: 10px;
+    }
+
+    .tracker-right ul li strong {
+        font-size: 18px;
+    }
+
+    /* New Cover Letter Help Section */
+    .cover-letter-help {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #f3f4f6;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .cover-letter-help h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .cover-letter-help p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .button-link {
+        background-color: #3B7EA1;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 18px;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+    }
+
+    .button-link:hover {
+        background-color: #3B7EA1;
+    }
+</style>
+
 {% endblock %}

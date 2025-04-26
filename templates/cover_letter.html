@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Cover Letter Generator{% endblock %}
+
+{% block content %}
+<h1>Generate Your Cover Letter</h1>
+
+<form method="POST" action="{{ url_for('cover_letter') }}">
+    <input type="text" name="position" placeholder="Position Title" required>
+    <input type="text" name="lab" placeholder="Research Lab Name" required>
+    <textarea name="experiences" placeholder="Describe your experiences" rows="6" required></textarea>
+    <button type="submit">Generate Cover Letter</button>
+</form>
+
+
+{% if cover_letter %}
+    <div class="letter-card">
+        <h2>Your Generated Cover Letter:</h2>
+        <p>{{ cover_letter }}</p>
+
+        <form method="POST" action="{{ url_for('download_cover_letter') }}">
+            <input type="hidden" name="cover_letter_content" value="{{ cover_letter }}">
+            <button type="submit" class="download-btn">Download as PDF</button>
+        </form>
+    </div>
+{% endif %}
+
+
+{% endblock %}
