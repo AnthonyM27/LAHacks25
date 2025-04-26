@@ -1,0 +1,518 @@
+[
+  {
+    "name": "Berkeley Center for Law and Business",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-center-law-and-business"
+  },
+  {
+    "name": "Berkeley Center for Law and Technology",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-center-law-and-technology"
+  },
+  {
+    "name": "Berkeley Roundtable on the International Economy",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-roundtable-international-economy"
+  },
+  {
+    "name": "Center for Financial Reporting and Management",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-financial-reporting-and-management"
+  },
+  {
+    "name": "Center for Law, Energy & the Environment",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-law-energy-environment"
+  },
+  {
+    "name": "Center for Responsible Business",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-responsible-business"
+  },
+  {
+    "name": "Center for the Study of Law and Society",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-study-law-and-society"
+  },
+  {
+    "name": "Clausen Center for International Business & Policy",
+    "link": "https://vcresearch.berkeley.edu/research-unit/clausen-center-international-business-policy"
+  },
+  {
+    "name": "Fisher Center for Real Estate & Urban Economics",
+    "link": "https://vcresearch.berkeley.edu/research-unit/fisher-center-real-estate-urban-economics"
+  },
+  {
+    "name": "Helen Diller Institute for Jewish Law and Israel Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/helen-diller-institute-jewish-law-and-israel-studies"
+  },
+  {
+    "name": "Institute for Business Innovation",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-business-innovation"
+  },
+  {
+    "name": "Institute for Legal Research",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-legal-research"
+  },
+  {
+    "name": "Kadish Center for Morality, Law & Public Affairs",
+    "link": "https://vcresearch.berkeley.edu/research-unit/kadish-center-morality-law-public-affairs"
+  },
+  {
+    "name": "Angelo Coast Range Reserve",
+    "link": "https://vcresearch.berkeley.edu/research-unit/angelo-coast-range-reserve"
+  },
+  {
+    "name": "Berkeley Food Institute",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-food-institute"
+  },
+  {
+    "name": "Berkeley Natural History Museums",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-natural-history-museums"
+  },
+  {
+    "name": "Berkeley Water Center",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-water-center"
+  },
+  {
+    "name": "Blue Oak Ranch Reserve",
+    "link": "https://vcresearch.berkeley.edu/research-unit/blue-oak-ranch-reserve"
+  },
+  {
+    "name": "California Institute for Energy and Environment",
+    "link": "https://vcresearch.berkeley.edu/research-unit/california-institute-energy-and-environment"
+  },
+  {
+    "name": "Central Sierra Snow Lab",
+    "link": "https://vcresearch.berkeley.edu/research-unit/central-sierra-snow-lab"
+  },
+  {
+    "name": "Chickering American River Reserve",
+    "link": "https://vcresearch.berkeley.edu/research-unit/chickering-american-river-reserve"
+  },
+  {
+    "name": "Energy & Biosciences Institute",
+    "link": "https://vcresearch.berkeley.edu/research-unit/energy-biosciences-institute"
+  },
+  {
+    "name": "Energy Institute at Haas",
+    "link": "https://vcresearch.berkeley.edu/research-unit/energy-institute-haas"
+  },
+  {
+    "name": "Eric and Wendy Schmidt Center for Data Science & Environment",
+    "link": "https://vcresearch.berkeley.edu/research-unit/eric-and-wendy-schmidt-center-data-science-environment"
+  },
+  {
+    "name": "Essig Museum of Entomology",
+    "link": "https://vcresearch.berkeley.edu/research-unit/essig-museum-entomology"
+  },
+  {
+    "name": "Field Station for the Study of Behavior, Ecology and Reproduction",
+    "link": "https://vcresearch.berkeley.edu/research-unit/field-station-study-behavior-ecology-and-reproduction"
+  },
+  {
+    "name": "Hans Jenny Pygmy Forest Reserve",
+    "link": "https://vcresearch.berkeley.edu/research-unit/hans-jenny-pygmy-forest-reserve"
+  },
+  {
+    "name": "Hastings Natural History Reservation",
+    "link": "https://vcresearch.berkeley.edu/research-unit/hastings-natural-history-reservation"
+  },
+  {
+    "name": "Kavli Energy NanoScience Institute",
+    "link": "https://vcresearch.berkeley.edu/research-unit/kavli-energy-nanoscience-institute"
+  },
+  {
+    "name": "Museum of Vertebrate Zoology",
+    "link": "https://vcresearch.berkeley.edu/research-unit/museum-vertebrate-zoology"
+  },
+  {
+    "name": "Renewable and Appropriate Energy Laboratory",
+    "link": "https://vcresearch.berkeley.edu/research-unit/renewable-and-appropriate-energy-laboratory"
+  },
+  {
+    "name": "Richard B. Gump South Pacific Research",
+    "link": "https://vcresearch.berkeley.edu/research-unit/richard-b-gump-south-pacific-research"
+  },
+  {
+    "name": "Sagehen Creek Field Station",
+    "link": "https://vcresearch.berkeley.edu/research-unit/sagehen-creek-field-station"
+  },
+  {
+    "name": "UC Botanical Garden",
+    "link": "https://vcresearch.berkeley.edu/research-unit/uc-botanical-garden"
+  },
+  {
+    "name": "UC Museum of Paleontology",
+    "link": "https://vcresearch.berkeley.edu/research-unit/uc-museum-paleontology"
+  },
+  {
+    "name": "University and Jepson Herbaria",
+    "link": "https://vcresearch.berkeley.edu/research-unit/university-and-jepson-herbaria"
+  },
+  {
+    "name": "Berkeley Institute for Data Science (BIDS)",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-institute-data-science"
+  },
+  {
+    "name": "Berkeley Sensor & Actuator Center",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-sensor-actuator-center"
+  },
+  {
+    "name": "C3.ai Digital Transformation Institute",
+    "link": "https://vcresearch.berkeley.edu/research-unit/c3ai-digital-transformation-institute"
+  },
+  {
+    "name": "Center for Environmental Design Research",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-environmental-design-research"
+  },
+  {
+    "name": "Center for Information Technology Research in the Interest of Society and the Banatao Institute (CITRIS)",
+    "link": "https://vcresearch.berkeley.edu/research-unit/citris-and-banatao-institute"
+  },
+  {
+    "name": "Center for Long-Term Cybersecurity",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-long-term-cybersecurity"
+  },
+  {
+    "name": "Center for Utilization of Biological Engineering in Space (CUBES)",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-utilization-biological-engineering-space-cubes"
+  },
+  {
+    "name": "Coleman Fung Institute for Engineering Leadership",
+    "link": "https://vcresearch.berkeley.edu/research-unit/coleman-fung-institute-engineering-leadership"
+  },
+  {
+    "name": "Dado and Maria Banatao GLOBE Center for Global Learning and Outreach from Berkeley Engineering (GLOBE)",
+    "link": "https://vcresearch.berkeley.edu/research-unit/dado-and-maria-banatao-globe-center-global-learning-and-outreach-berkeley-engineering"
+  },
+  {
+    "name": "FHL Vive Center for Enhanced Reality",
+    "link": "https://vcresearch.berkeley.edu/research-unit/fhl-vive-center-enhanced-reality"
+  },
+  {
+    "name": "Institute of Transportation Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-transportation-studies"
+  },
+  {
+    "name": "Lawrence Hall of Science",
+    "link": "https://vcresearch.berkeley.edu/research-unit/lawrence-hall-science"
+  },
+  {
+    "name": "Pacific Earthquake Engineering Research Center",
+    "link": "https://vcresearch.berkeley.edu/research-unit/pacific-earthquake-engineering-research-center"
+  },
+  {
+    "name": "Project Production Systems Laboratory",
+    "link": "https://vcresearch.berkeley.edu/research-unit/project-production-systems-laboratory"
+  },
+  {
+    "name": "Simons Institute for the Theory of Computing",
+    "link": "https://vcresearch.berkeley.edu/research-unit/simons-institute-theory-computing"
+  },
+  {
+    "name": "Sutardja Center for Entrepreneurship & Technology (SCET)",
+    "link": "https://vcresearch.berkeley.edu/research-unit/sutardja-center-entrepreneurship-technology"
+  },
+  {
+    "name": "Canadian Studies Program",
+    "link": "https://vcresearch.berkeley.edu/research-unit/canadian-studies-program"
+  },
+  {
+    "name": "Center for African Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-african-studies"
+  },
+  {
+    "name": "Center for Chinese Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-chinese-studies"
+  },
+  {
+    "name": "Center for Japanese Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-japanese-studies"
+  },
+  {
+    "name": "Center for Korean Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-korean-studies"
+  },
+  {
+    "name": "Center for Latin American Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-latin-american-studies"
+  },
+  {
+    "name": "Center for Middle Eastern Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-middle-eastern-studies"
+  },
+  {
+    "name": "Center for Southeast Asia Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-southeast-asia-studies"
+  },
+  {
+    "name": "Global, International & Area Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/global-international-area-studies"
+  },
+  {
+    "name": "Institute for South Asia Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-south-asia-studies"
+  },
+  {
+    "name": "Institute of East Asian Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-east-asian-studies"
+  },
+  {
+    "name": "Institute of European Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-european-studies"
+  },
+  {
+    "name": "Institute of International Studies (IIS)",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-international-studies-iis"
+  },
+  {
+    "name": "Institute of Slavic, East European, and Eurasian Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-slavic-east-european-and-eurasian-studies"
+  },
+  {
+    "name": "Numata Center for Buddhist Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/numata-center-buddhist-studies"
+  },
+  {
+    "name": "Berkeley Stem Cell Center",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-stem-cell-center"
+  },
+  {
+    "name": "Berkeley Superfund Research Program",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-superfund-research-program"
+  },
+  {
+    "name": "California Institute for Quantitative Biosciences (QB3)",
+    "link": "https://vcresearch.berkeley.edu/research-unit/california-institute-quantitative-biosciences"
+  },
+  {
+    "name": "Cancer Research Laboratory",
+    "link": "https://vcresearch.berkeley.edu/research-unit/cancer-research-laboratory"
+  },
+  {
+    "name": "Center for Environmental Research and Children's Health (CERCH)",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-environmental-research-and-childrens-health-cerch"
+  },
+  {
+    "name": "Center for Global Public Health",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-global-public-health"
+  },
+  {
+    "name": "Center for Health Technology",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-health-technology"
+  },
+  {
+    "name": "Center for Healthcare Organizational & Innovation Research",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-healthcare-organizational-innovation-research"
+  },
+  {
+    "name": "Center for Science, Technology, Medicine and Society",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-science-technology-medicine-and-society"
+  },
+  {
+    "name": "Health Research for Action",
+    "link": "https://vcresearch.berkeley.edu/research-unit/health-research-action"
+  },
+  {
+    "name": "Helen Wills Neuroscience Institute",
+    "link": "https://vcresearch.berkeley.edu/research-unit/helen-wills-neuroscience-institute"
+  },
+  {
+    "name": "Henry Wheeler Center for Emerging and Neglected Diseases",
+    "link": "https://vcresearch.berkeley.edu/research-unit/henry-wheeler-center-emerging-and-neglected-diseases"
+  },
+  {
+    "name": "Innovative Genomics Institute",
+    "link": "https://vcresearch.berkeley.edu/research-unit/innovative-genomics-institute"
+  },
+  {
+    "name": "Interdisciplinary Center for Healthy Workplaces",
+    "link": "https://vcresearch.berkeley.edu/research-unit/interdisciplinary-center-healthy-workplaces"
+  },
+  {
+    "name": "Nicholas C. Petris Center on Health Care Markets and Consumer Welfare",
+    "link": "https://vcresearch.berkeley.edu/research-unit/nicholas-c-petris-center-health-care-markets-and-consumer-welfare"
+  },
+  {
+    "name": "Point Reyes Field Station",
+    "link": "https://vcresearch.berkeley.edu/research-unit/point-reyes-field-station"
+  },
+  {
+    "name": "Berkeley Center for Cosmological Physics",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-center-cosmological-physics"
+  },
+  {
+    "name": "Berkeley Nanosciences and Nanoengineering Institute",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-nanosciences-and-nanoengineering-institute"
+  },
+  {
+    "name": "Berkeley Quantum Information and Computation Center",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-quantum-information-and-computation-center"
+  },
+  {
+    "name": "Berkeley Seismological Laboratory",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-seismological-laboratory"
+  },
+  {
+    "name": "Center for Integrative Planetary Science",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-integrative-planetary-science"
+  },
+  {
+    "name": "Miller Institute for Basic Research in Science",
+    "link": "https://vcresearch.berkeley.edu/research-unit/miller-institute-basic-research-science"
+  },
+  {
+    "name": "Radio Astronomy Laboratory",
+    "link": "https://vcresearch.berkeley.edu/research-unit/radio-astronomy-laboratory"
+  },
+  {
+    "name": "Simons Institute for the Theory of Computing",
+    "link": "https://vcresearch.berkeley.edu/research-unit/simons-institute-theory-computing"
+  },
+  {
+    "name": "Space Sciences Laboratory",
+    "link": "https://vcresearch.berkeley.edu/research-unit/space-sciences-laboratory"
+  },
+  {
+    "name": "Theoretical Astrophysics Center",
+    "link": "https://vcresearch.berkeley.edu/research-unit/theoretical-astrophysics-center"
+  },
+  {
+    "name": "Archaeological Research Facility",
+    "link": "https://vcresearch.berkeley.edu/research-unit/archaeological-research-facility"
+  },
+  {
+    "name": "Arts Research Center",
+    "link": "https://vcresearch.berkeley.edu/research-unit/arts-research-center"
+  },
+  {
+    "name": "Berkeley Art Museum and Pacific Film Archive",
+    "link": "https://vcresearch.berkeley.edu/bampfa"
+  },
+  {
+    "name": "Berkeley Food Institute",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-food-institute"
+  },
+  {
+    "name": "Berkeley Institute for Young Americans",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-institute-young-americans"
+  },
+  {
+    "name": "Berkeley Population Center",
+    "link": "https://vcresearch.berkeley.edu/research-unit/berkeley-population-center"
+  },
+  {
+    "name": "Blum Center for Developing Economies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/blum-center-developing-economies"
+  },
+  {
+    "name": "California Health Benefits Review Program",
+    "link": "https://vcresearch.berkeley.edu/research-unit/california-health-benefits-review-program"
+  },
+  {
+    "name": "Cannabis Research Center",
+    "link": "https://vcresearch.berkeley.edu/research-unit/cannabis-research-center"
+  },
+  {
+    "name": "Center for Cities and Schools",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-cities-and-schools"
+  },
+  {
+    "name": "Center for Effective Global Action",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-effective-global-action"
+  },
+  {
+    "name": "Center for Environmental Research and Children's Health (CERCH)",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-environmental-research-and-childrens-health-cerch"
+  },
+  {
+    "name": "Center for New Music and Audio Technologies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-new-music-and-audio-technologies"
+  },
+  {
+    "name": "Center for Race and Gender",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-race-and-gender"
+  },
+  {
+    "name": "Center for Science, Technology, Medicine and Society",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-science-technology-medicine-and-society"
+  },
+  {
+    "name": "Center for Studies in Higher Education",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-studies-higher-education"
+  },
+  {
+    "name": "Center for the Science of Psychedelics",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-science-psychedelics"
+  },
+  {
+    "name": "Center for the Study of Sexual Culture",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-study-sexual-culture"
+  },
+  {
+    "name": "Center for the Tebtunis Papyri",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-tebtunis-papyri"
+  },
+  {
+    "name": "Center on the Economics and Demography of Aging",
+    "link": "https://vcresearch.berkeley.edu/research-unit/center-economics-and-demography-aging"
+  },
+  {
+    "name": "Doreen B. Townsend Center for the Humanities",
+    "link": "https://vcresearch.berkeley.edu/research-unit/doreen-b-townsend-center-humanities"
+  },
+  {
+    "name": "Human Rights Center",
+    "link": "https://vcresearch.berkeley.edu/research-unit/human-rights-center"
+  },
+  {
+    "name": "Innovations for Youth (i4Y)",
+    "link": "https://vcresearch.berkeley.edu/research-unit/innovations-youth-i4y"
+  },
+  {
+    "name": "Institute for Gender and Sexuality Research",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-gender-and-sexuality-research"
+  },
+  {
+    "name": "Institute for Research on Labor and Employment",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-research-labor-and-employment"
+  },
+  {
+    "name": "Institute for the Study of Societal Issues",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-study-societal-issues"
+  },
+  {
+    "name": "Institute of Cognitive and Brain Sciences",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-cognitive-and-brain-sciences"
+  },
+  {
+    "name": "Institute of Governmental Studies",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-governmental-studies"
+  },
+  {
+    "name": "Institute of Human Development",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-human-development"
+  },
+  {
+    "name": "Institute of Personality and Social Research",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-personality-and-social-research"
+  },
+  {
+    "name": "Institute of Urban and Regional Development",
+    "link": "https://vcresearch.berkeley.edu/research-unit/institute-urban-and-regional-development"
+  },
+  {
+    "name": "Magnes Collection of Jewish Art and Life",
+    "link": "https://vcresearch.berkeley.edu/magnes"
+  },
+  {
+    "name": "Othering & Belonging Institute",
+    "link": "https://vcresearch.berkeley.edu/research-unit/othering-belonging-institute"
+  },
+  {
+    "name": "Phoebe A. Hearst Museum of Anthropology",
+    "link": "https://vcresearch.berkeley.edu/research-unit/phoebe-hearst-museum-anthropology"
+  },
+  {
+    "name": "Robert D. Burch Center for Tax Policy & Public Finance",
+    "link": "https://vcresearch.berkeley.edu/research-unit/robert-d-burch-center-tax-policy-public-finance"
+  },
+  {
+    "name": "Terner Center for Housing Innovation",
+    "link": "https://vcresearch.berkeley.edu/research-unit/terner-center-housing-innovation-0"
+  }
+]

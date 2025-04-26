@@ -173,13 +173,51 @@ def home():
     return render_template('home.html', progress=progress, motivation=motivation)
 
 
-@app.route('/find-positions')
-def find_positions():
-    return render_template('find-positions.html')
+from flask import render_template, request
+import re
+import requests
+from bs4 import BeautifulSoup
 
-@app.route('/application-tracker')
+# Function to scrape labs based on the topic of interest
+def scrape_labs_by_topic(topic):
+    base_url = 'https://vcresearch.berkeley.edu'
+    url = base_url + '/research-units/centers-and-institutes-by-subject-area'
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # Find all the labs in the 'main-content' section
+    labs = soup.find('div', {'class': 'main-content'})
+    lab_links = labs.find_all('a', href=True)
+    
+    filtered_labs = []
+    for lab in lab_links:
+        lab_name = lab.text.strip()
+        lab_url = lab['href']
+        # If the URL is relative, prepend the base URL
+        if not lab_url.startswith('http'):
+            lab_url = base_url + lab_url
+        # Check if the topic is present in the lab name (case-insensitive)
+        if re.search(topic, lab_name, re.IGNORECASE):
+            filtered_labs.append({'name': lab_name, 'url': lab_url})
+
+    return filtered_labs
+
+
+# Route for find_positions page
+@app.route('/find_positions', methods=['GET', 'POST'])
+def find_positions():
+    labs = []
+    if request.method == 'POST':
+        topic = request.form['topic']
+        # Get the relevant labs based on the topic of interest
+        labs = scrape_labs_by_topic(topic)
+
+    return render_template('find_positions.html', labs=labs)
+
+
+@app.route('/application_tracker')
 def application_tracker():
-    return render_template('application-tracker.html')
+    return render_template('application_tracker.html')
 
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = {'pdf'}
@@ -233,8 +271,6 @@ def profile():
         return redirect(url_for('profile'))
 
     return render_template('profile.html', uploaded_files=uploaded_files)
-
-
 
 
 if __name__ == '__main__':
