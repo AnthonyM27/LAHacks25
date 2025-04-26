@@ -4,6 +4,8 @@ import re
 import os
 from werkzeug.utils import secure_filename
 from datetime import datetime, timedelta
+from finalAI.fetchCoverLetter import FetchBairAgent
+from pdfCreator import PDFGenerator
 
 app = Flask(__name__)
 app.secret_key = 'LAHACKS2025'
@@ -60,26 +62,29 @@ def cover_letter():
         lab = request.form['lab']
         experiences = request.form['experiences']
 
+        agent = FetchBairAgent()
+        cover_letter = agent.run_once(position_title="Student Researcher", lab_name="BAIR", past_experiences="None")
+
         # Use Fetch.ai API here to generate the cover letter
-        prompt = f"Write a professional cover letter for a {position} at {lab}. Mention the following experiences: {experiences}."
+        # prompt = f"Write a professional cover letter for a {position} at {lab}. Mention the following experiences: {experiences}."
 
         # Example of sending request to Fetch.ai LLM
-        fetch_api_url = 'https://gateway.fetch.ai/llm-api-endpoint'  # <-- you'll replace with correct endpoint
-        headers = {
-            'Authorization': 'Bearer YOUR_FETCH_API_KEY',
-            'Content-Type': 'application/json'
-        }
-        payload = {
-            "prompt": prompt,
-            "max_tokens": 500
-        }
+        # fetch_api_url = 'https://gateway.fetch.ai/llm-api-endpoint'  # <-- you'll replace with correct endpoint
+        # headers = {
+        #     'Authorization': 'Bearer YOUR_FETCH_API_KEY',
+        #     'Content-Type': 'application/json'
+        # }
+        # payload = {
+        #     "prompt": prompt,
+        #     "max_tokens": 500
+        # }
 
-        try:
-            response = requests.post(fetch_api_url, headers=headers, json=payload)
-            data = response.json()
-            cover_letter = data.get('text', 'Failed to generate cover letter. Please try again.')
-        except Exception as e:
-            cover_letter = f"An error occurred: {str(e)}"
+        # try:
+        #     response = requests.post(fetch_api_url, headers=headers, json=payload)
+        #     data = response.json()
+        #     cover_letter = data.get('text', 'Failed to generate cover letter. Please try again.')
+        # except Exception as e:
+        #     cover_letter = f"An error occurred: {str(e)}"
 
     return render_template('cover_letter.html', cover_letter=cover_letter)
 
@@ -94,19 +99,24 @@ def download_cover_letter():
 
     # Create a PDF in memory
     buffer = BytesIO()
-    p = canvas.Canvas(buffer, pagesize=letter)
+    c = canvas.Canvas(buffer, pagesize=letter)
     width, height = letter
 
-    # Split the content into lines and draw them
-    y = height - 50
-    for line in content.splitlines():
-        if y < 50:
-            p.showPage()
-            y = height - 50
-        p.drawString(50, y, line)
-        y -= 20
+    c.setFont("Helvetica", 10)
+    margin = 10
+    
+    # Define a function to wrap the text
+    text_object = c.beginText(margin, height - margin)
+    text_object.setFont("Helvetica", 10)
+    text_object.setTextOrigin(margin, height - margin)
+    
+    # Wrap text to fit within the page width
+    text_object.textLines(content)
+    
+    # Add the text to the canvas
+    c.drawText(text_object)
 
-    p.save()
+    c.save()
     buffer.seek(0)
 
     return send_file(buffer, as_attachment=True, download_name='cover_letter.pdf', mimetype='application/pdf')
