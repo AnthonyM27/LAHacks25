@@ -63,7 +63,7 @@ def cover_letter():
         experiences = request.form['experiences']
 
         agent = FetchBairAgent()
-        cover_letter = agent.run_once(position_title="Student Researcher", lab_name="BAIR", past_experiences="None")
+        cover_letter = agent.run_once(position_title=position, lab_name=lab, past_experiences=experiences)
 
         # Use Fetch.ai API here to generate the cover letter
         # prompt = f"Write a professional cover letter for a {position} at {lab}. Mention the following experiences: {experiences}."
