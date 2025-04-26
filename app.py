@@ -1,0 +1,231 @@
+
+from flask import Flask, render_template, redirect, url_for, request, session, flash
+import re
+import os
+from werkzeug.utils import secure_filename
+from datetime import datetime, timedelta
+
+app = Flask(__name__)
+app.secret_key = 'LAHACKS2025'
+
+@app.route('/')
+def landing():
+    return render_template('landing.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+
+        session['user'] = email
+        return redirect(url_for('home'))
+
+    return render_template('login.html')
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        confirm_password = request.form['confirm_password']
+
+        email_regex = r'^\S+@\S+\.\S+$'
+        if not re.match(email_regex, email):
+            flash('Invalid email address.', 'error')
+            return redirect(url_for('register'))
+
+        if len(password) < 6:
+            flash('Password must be at least 6 characters long.', 'error')
+            return redirect(url_for('register'))
+
+        if password != confirm_password:
+            flash('Passwords do not match. Please try again.', 'error')
+            return redirect(url_for('register'))
+
+        session['user'] = email
+        session['profile_complete'] = False
+
+        return redirect(url_for('profile'))
+
+    return render_template('register.html')
+    
+import requests
+
+@app.route('/cover_letter', methods=['GET', 'POST'])
+def cover_letter():
+    cover_letter = None
+    if request.method == 'POST':
+        position = request.form['position']
+        lab = request.form['lab']
+        experiences = request.form['experiences']
+
+        # Use Fetch.ai API here to generate the cover letter
+        prompt = f"Write a professional cover letter for a {position} at {lab}. Mention the following experiences: {experiences}."
+
+        # Example of sending request to Fetch.ai LLM
+        fetch_api_url = 'https://gateway.fetch.ai/llm-api-endpoint'  # <-- you'll replace with correct endpoint
+        headers = {
+            'Authorization': 'Bearer YOUR_FETCH_API_KEY',
+            'Content-Type': 'application/json'
+        }
+        payload = {
+            "prompt": prompt,
+            "max_tokens": 500
+        }
+
+        try:
+            response = requests.post(fetch_api_url, headers=headers, json=payload)
+            data = response.json()
+            cover_letter = data.get('text', 'Failed to generate cover letter. Please try again.')
+        except Exception as e:
+            cover_letter = f"An error occurred: {str(e)}"
+
+    return render_template('cover_letter.html', cover_letter=cover_letter)
+
+from flask import send_file
+from io import BytesIO
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+
+@app.route('/download_cover_letter', methods=['POST'])
+def download_cover_letter():
+    content = request.form['cover_letter_content']
+
+    # Create a PDF in memory
+    buffer = BytesIO()
+    p = canvas.Canvas(buffer, pagesize=letter)
+    width, height = letter
+
+    # Split the content into lines and draw them
+    y = height - 50
+    for line in content.splitlines():
+        if y < 50:
+            p.showPage()
+            y = height - 50
+        p.drawString(50, y, line)
+        y -= 20
+
+    p.save()
+    buffer.seek(0)
+
+    return send_file(buffer, as_attachment=True, download_name='cover_letter.pdf', mimetype='application/pdf')
+
+
+
+@app.route('/home', methods=['GET', 'POST'])
+def home():
+    if 'weekly_goal' not in session:
+        session['weekly_goal'] = 5  # Default goal
+    if 'applications_submitted' not in session:
+        session['applications_submitted'] = 0
+    if 'last_reset' not in session:
+        session['last_reset'] = datetime.now().isoformat()
+
+    # Check if today is after last week's Sunday
+    last_reset = datetime.fromisoformat(session['last_reset'])
+    now = datetime.now()
+
+    # Find the most recent Sunday
+    most_recent_sunday = now - timedelta(days=now.weekday() + 1) if now.weekday() != 6 else now
+
+    if last_reset < most_recent_sunday:
+        session['applications_submitted'] = 0
+        session['last_reset'] = now.isoformat()
+
+    if request.method == 'POST':
+        if 'set_goal' in request.form:
+            goal = request.form.get('weekly_goal')
+            if goal and goal.isdigit():
+                session['weekly_goal'] = int(goal)
+                session['applications_submitted'] = 0  # reset on new goal set
+                flash('Goal updated successfully!', 'success')
+            else:
+                flash('Please enter a valid number.', 'error')
+
+        if 'log_application' in request.form:
+            session['applications_submitted'] += 1
+
+    progress = 0
+    if session['weekly_goal'] > 0:
+        progress = int((session['applications_submitted'] / session['weekly_goal']) * 100)
+
+    # Motivational messages
+    if progress == 0:
+        motivation = "Let's get started!"
+    elif progress < 50:
+        motivation = "Keep going, you got this!"
+    elif progress < 100:
+        motivation = "Almost there!"
+    else:
+        motivation = "Amazing work! Goal reached!"
+
+    return render_template('home.html', progress=progress, motivation=motivation)
+
+
+@app.route('/find-positions')
+def find_positions():
+    return render_template('find-positions.html')
+
+@app.route('/application-tracker')
+def application_tracker():
+    return render_template('application-tracker.html')
+
+UPLOAD_FOLDER = 'static/uploads'
+ALLOWED_EXTENSIONS = {'pdf'}
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# Helper to check allowed file types
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/profile', methods=['GET', 'POST'])
+def profile():
+    user_folder = os.path.join(app.config['UPLOAD_FOLDER'], session['user'])
+    os.makedirs(user_folder, exist_ok=True)
+
+    uploaded_files = []
+    if os.path.exists(user_folder):
+        uploaded_files = os.listdir(user_folder)
+
+    if request.method == 'POST':
+        full_name = request.form.get('full_name')
+        email = request.form.get('email')
+        phone_number = request.form.get('phone_number')
+
+        if full_name:  # Only update name if it's provided
+            session['full_name'] = full_name
+
+        # Save email and phone number to session or database if needed
+        session['email'] = email
+        session['phone_number'] = phone_number
+
+        resume = request.files.get('resume')
+        if resume and allowed_file(resume.filename):
+            resume.save(os.path.join(user_folder, secure_filename('resume.pdf')))
+
+        transcript = request.files.get('transcript')
+        if transcript and allowed_file(transcript.filename):
+            transcript.save(os.path.join(user_folder, secure_filename('transcript.pdf')))
+
+        letters = request.files.getlist('letters')
+        for idx, letter in enumerate(letters):
+            if letter and allowed_file(letter.filename):
+                letter.save(os.path.join(user_folder, secure_filename(f'letter_{idx+1}.pdf')))
+
+        writing_samples = request.files.getlist('writing_samples')
+        for idx, sample in enumerate(writing_samples):
+            if sample and allowed_file(sample.filename):
+                sample.save(os.path.join(user_folder, secure_filename(f'writing_sample_{idx+1}.pdf')))
+
+        flash('Profile updated successfully!', 'success')
+        return redirect(url_for('profile'))
+
+    return render_template('profile.html', uploaded_files=uploaded_files)
+
+
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
