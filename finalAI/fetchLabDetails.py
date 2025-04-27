@@ -9,7 +9,7 @@ import json
 GEMINI_API_KEY = "AIzaSyCMF3sf2BD9f1AZ1FdHIJgVCj5f03CQUes"  # Load API key from environment
 
 
-class FetchLabsAgent:
+class FetchLabDetailsAgent:
     def __init__(self, fetch_interval_seconds=3600):
         api_key = GEMINI_API_KEY
         self.client = genai.Client(api_key=api_key)
@@ -24,7 +24,7 @@ class FetchLabsAgent:
 
             
             # Default prompt if none is provided
-            prompt = f'''Research and summarize the different research centers at UC Berkeley that focus on {topic}. For each center, provide:
+            prompt = f'''Research and summarize the following research lab at Berkeley: {topic}. For each center, provide:
 
 name: The center’s name
 mission: A brief description of its mission or focus
@@ -40,7 +40,7 @@ Return this in JSON format.'''
             json_data = self.save_professors(response.text)
             print(json_data[4:])
             labs = json.loads(json_data[7:-3])
-            print("[Success] Fetched and saved professors.")
+            print("[Success] Fetched and saved lab details.")
             return labs
         except Exception as e:
             print(f"[Error] Failed to fetch: {e}")
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     # Position title, research lab, experiences
     agent = FetchLabsAgent()
     # Choose one:
-    print(agent.run_once(topic="Electronics"))     # Fetch once with a custom prompt
+    print(agent.run_once(topic="RISE Lab"))     # Fetch once with a custom prompt
     # agent.run_forever(prompt=custom_prompt) # Or fetch forever with a custom prompt
 
     

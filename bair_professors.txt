@@ -1,29 +1,71 @@
 ```json
 [
   {
-    "name": "Berkeley Artificial Intelligence Research (BAIR) Lab",
-    "mission": "Brings together UC Berkeley researchers across machine learning, computer vision, natural language processing, planning, control, and robotics to define the foundations of AI and explore its applications.",
-    "link": "https://bair.berkeley.edu/"
+    "name": "Berkeley Sensor & Actuator Center (BSAC)",
+    "mission": "A collaborative research center fostering industry-university partnerships focused on micro/nano-scale sensors, actuators, Microelectromechanical Systems (MEMS), and integrated systems. Photonics and optics are significant components, particularly in optical MEMS, integrated photonics for sensing and communication, and optical methods for bio-sensing.",
+    "faculty": [
+      "David A. Horsley (Co-Director)",
+      "Liwei Lin (Co-Director)",
+      "Ming C. Wu (Key Faculty, Photonics/Optics)",
+      "Constance Chang-Hasnain (Key Faculty, Photonics/Optics)",
+      "Vladimir Stojanović (Key Faculty, Silicon Photonics)",
+      "Bernhard E. Boser (Faculty, Sensor Interfaces)",
+      "Luke P. Lee (Faculty, Biophotonics/Optofluidics)"
+    ],
+    "projects": [
+      "Optical MEMS (MOEMS) for displays, switching, and scanning (e.g., LiDAR)",
+      "Integrated Silicon Photonics for data communications and sensing",
+      "Miniature optical systems for imaging and medical devices",
+      "Micro-optics fabrication and integration",
+      "Optical biosensors and diagnostic platforms",
+      "Optofluidic devices"
+    ],
+    "link": "https://bsac.berkeley.edu/"
   },
   {
-    "name": "Center for Human-Compatible Artificial Intelligence (CHAI)",
-    "mission": "Focuses on research to reorient the general direction of AI research towards provably beneficial systems, addressing challenges in AI safety and alignment with human values.",
-    "link": "https://humancompatible.ai/"
+    "name": "Berkeley Quantum Information & Computation Center (BQIC)",
+    "mission": "An interdisciplinary center dedicated to advancing research and education in quantum science and technology. This includes quantum computing, quantum sensing, quantum communication, and fundamental quantum physics, often leveraging photonics through laser control of qubits, quantum optics, and photonic quantum systems.",
+    "faculty": [
+      "Hartmut Häffner (Key Faculty, Trapped Ion Quantum Computing/Optics)",
+      "Dan Stamper-Kurn (Key Faculty, Ultracold Atoms/Quantum Optics)",
+      "Irfan Siddiqi (Key Faculty, Superconducting Qubits, Microwave Photonics)",
+      "Boubacar Kanté (Key Faculty, Nanophotonics/Metamaterials for Quantum Applications)",
+      "Norman Yao (Key Faculty, Quantum Theory/NV Centers)",
+      "K. Birgitta Whaley (Key Faculty, Quantum Information Theory)"
+    ],
+    "projects": [
+      "Trapped-ion quantum computing using laser manipulation",
+      "Quantum sensing with optically active defects (e.g., NV centers in diamond)",
+      "Cavity Quantum Electrodynamics (QED) with atoms and photons",
+      "Development of photonic components for quantum networks",
+      "Topological photonics and its applications",
+      "Quantum algorithms and simulation",
+      "Control and readout of quantum systems using microwave and optical photons"
+    ],
+    "link": "https://bqic.berkeley.edu/"
   },
   {
-    "name": "Berkeley Institute for Data Science (BIDS)",
-    "mission": "Works across disciplines to advance data science research and practice. While broader than AI, it heavily incorporates and supports AI/ML methodologies as core components of data analysis and discovery.",
-    "link": "https://bids.berkeley.edu/"
-  },
-  {
-    "name": "CITRIS and the Banatao Institute",
-    "mission": "Creates information technology solutions for society's most pressing challenges. AI is a significant focus area within their research thrusts, applied to domains like health, sustainability, and robotics.",
-    "link": "https://citris-uc.org/"
-  },
-  {
-    "name": "Berkeley DeepDrive (BDD)",
-    "mission": "Investigates state-of-the-art technologies in computer vision and machine learning for automotive applications, including autonomous driving, a heavily AI-driven field.",
-    "link": "https://bdd.berkeley.edu/"
+    "name": "Kavli Energy NanoScience Institute (ENSI)",
+    "mission": "Focuses on fundamental research at the intersection of nanoscience and energy science, exploring energy capture, storage, conversion, and efficiency. Light-matter interaction at the nanoscale is a core theme, encompassing photovoltaics, light harvesting, photocatalysis, and advanced optical probes.",
+    "faculty": [
+      "Peidong Yang (Director)",
+      "Xiang Zhang (Key Faculty, Nanophotonics/Metamaterials)",
+      "Eli Yablonovitch (Key Faculty, Photovoltaics/Photonics)",
+      "Feng Wang (Key Faculty, Ultrafast Optics/2D Materials)",
+      "Naomi S. Ginsberg (Key Faculty, Ultrafast Imaging/Energy Transport)",
+      "Ali Javey (Key Faculty, Nanomaterials/Optoelectronics)",
+      "Michael F. Crommie (Key Faculty, Scanning Probe Microscopy/Spectroscopy)"
+    ],
+    "projects": [
+      "Nanophotonics and plasmonics for light concentration and manipulation",
+      "Next-generation solar energy conversion (perovskites, quantum dots, nanostructures)",
+      "Light-matter interactions in low-dimensional materials (2D materials, nanowires)",
+      "Ultrafast optical spectroscopy to probe energy transfer dynamics",
+      "Advanced optical imaging techniques for nanoscale systems",
+      "Photocatalysis and artificial photosynthesis",
+      "Development of novel optoelectronic materials and devices"
+    ],
+    "link": "https://kavli.berkeley.edu/"
   }
 ]
 ```
