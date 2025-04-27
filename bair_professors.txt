@@ -1,0 +1,29 @@
+```json
+[
+  {
+    "name": "Berkeley Artificial Intelligence Research (BAIR) Lab",
+    "mission": "Brings together UC Berkeley researchers across machine learning, computer vision, natural language processing, planning, control, and robotics to define the foundations of AI and explore its applications.",
+    "link": "https://bair.berkeley.edu/"
+  },
+  {
+    "name": "Center for Human-Compatible Artificial Intelligence (CHAI)",
+    "mission": "Focuses on research to reorient the general direction of AI research towards provably beneficial systems, addressing challenges in AI safety and alignment with human values.",
+    "link": "https://humancompatible.ai/"
+  },
+  {
+    "name": "Berkeley Institute for Data Science (BIDS)",
+    "mission": "Works across disciplines to advance data science research and practice. While broader than AI, it heavily incorporates and supports AI/ML methodologies as core components of data analysis and discovery.",
+    "link": "https://bids.berkeley.edu/"
+  },
+  {
+    "name": "CITRIS and the Banatao Institute",
+    "mission": "Creates information technology solutions for society's most pressing challenges. AI is a significant focus area within their research thrusts, applied to domains like health, sustainability, and robotics.",
+    "link": "https://citris-uc.org/"
+  },
+  {
+    "name": "Berkeley DeepDrive (BDD)",
+    "mission": "Investigates state-of-the-art technologies in computer vision and machine learning for automotive applications, including autonomous driving, a heavily AI-driven field.",
+    "link": "https://bdd.berkeley.edu/"
+  }
+]
+```

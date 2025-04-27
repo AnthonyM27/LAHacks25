@@ -279,6 +279,7 @@ def profile():
         full_name = request.form.get('full_name')
         email = request.form.get('email')
         phone_number = request.form.get('phone_number')
+        url = request.form.get('url')
 
         if full_name:  # Only update name if it's provided
             session['full_name'] = full_name
