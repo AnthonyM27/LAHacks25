@@ -6,7 +6,7 @@ import json
 
 
 
-GEMINI_API_KEY = "AIzaSyCMF3sf2BD9f1AZ1FdHIJgVCj5f03CQUes"  # Load API key from environment
+GEMINI_API_KEY = "api-key"  # Load API key from environment
 
 
 class FetchLabsAgent:

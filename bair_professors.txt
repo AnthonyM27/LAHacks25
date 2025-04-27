@@ -1,71 +1,127 @@
 ```json
 [
   {
-    "name": "Berkeley Sensor & Actuator Center (BSAC)",
-    "mission": "A collaborative research center fostering industry-university partnerships focused on micro/nano-scale sensors, actuators, Microelectromechanical Systems (MEMS), and integrated systems. Photonics and optics are significant components, particularly in optical MEMS, integrated photonics for sensing and communication, and optical methods for bio-sensing.",
+    "name": "Berkeley Artificial Intelligence Research (BAIR) Lab",
+    "mission": "To bring together UC Berkeley researchers across the areas of computer vision, machine learning, natural language processing, planning, control, and robotics. BAIR fosters collaboration and defines the leading edge of AI.",
     "faculty": [
-      "David A. Horsley (Co-Director)",
-      "Liwei Lin (Co-Director)",
-      "Ming C. Wu (Key Faculty, Photonics/Optics)",
-      "Constance Chang-Hasnain (Key Faculty, Photonics/Optics)",
-      "Vladimir Stojanović (Key Faculty, Silicon Photonics)",
-      "Bernhard E. Boser (Faculty, Sensor Interfaces)",
-      "Luke P. Lee (Faculty, Biophotonics/Optofluidics)"
+      "Pieter Abbeel",
+      "Anca Dragan",
+      "Trevor Darrell",
+      "Alyosha Efros",
+      "Ken Goldberg",
+      "Michael I. Jordan",
+      "Jitendra Malik",
+      "Stuart Russell",
+      "Dawn Song",
+      "Ion Stoica",
+      "Sergey Levine",
+      "(Note: BAIR includes a large number of faculty across EECS and other departments; this is a representative sample of key members)"
     ],
     "projects": [
-      "Optical MEMS (MOEMS) for displays, switching, and scanning (e.g., LiDAR)",
-      "Integrated Silicon Photonics for data communications and sensing",
-      "Miniature optical systems for imaging and medical devices",
-      "Micro-optics fabrication and integration",
-      "Optical biosensors and diagnostic platforms",
-      "Optofluidic devices"
+      "Deep Reinforcement Learning",
+      "Computer Vision (Object Recognition, Scene Understanding)",
+      "Natural Language Processing (Machine Translation, Text Generation)",
+      "Robotics (Manipulation, Locomotion, Human-Robot Interaction)",
+      "Explainable AI (XAI)",
+      "AI Safety and Ethics",
+      "Generative Models"
     ],
-    "link": "https://bsac.berkeley.edu/"
+    "link": "https://bair.berkeley.edu/"
   },
   {
-    "name": "Berkeley Quantum Information & Computation Center (BQIC)",
-    "mission": "An interdisciplinary center dedicated to advancing research and education in quantum science and technology. This includes quantum computing, quantum sensing, quantum communication, and fundamental quantum physics, often leveraging photonics through laser control of qubits, quantum optics, and photonic quantum systems.",
+    "name": "Center for Human-Compatible Artificial Intelligence (CHAI)",
+    "mission": "To develop the conceptual and technical foundations for provably beneficial AI, ensuring that AI systems are safe and aligned with human values.",
     "faculty": [
-      "Hartmut Häffner (Key Faculty, Trapped Ion Quantum Computing/Optics)",
-      "Dan Stamper-Kurn (Key Faculty, Ultracold Atoms/Quantum Optics)",
-      "Irfan Siddiqi (Key Faculty, Superconducting Qubits, Microwave Photonics)",
-      "Boubacar Kanté (Key Faculty, Nanophotonics/Metamaterials for Quantum Applications)",
-      "Norman Yao (Key Faculty, Quantum Theory/NV Centers)",
-      "K. Birgitta Whaley (Key Faculty, Quantum Information Theory)"
+      "Stuart Russell (Director)",
+      "Anca Dragan",
+      "Pieter Abbeel",
+      "Tom Griffiths",
+      "Jacob Steinhardt"
     ],
     "projects": [
-      "Trapped-ion quantum computing using laser manipulation",
-      "Quantum sensing with optically active defects (e.g., NV centers in diamond)",
-      "Cavity Quantum Electrodynamics (QED) with atoms and photons",
-      "Development of photonic components for quantum networks",
-      "Topological photonics and its applications",
-      "Quantum algorithms and simulation",
-      "Control and readout of quantum systems using microwave and optical photons"
+      "The Value Alignment Problem",
+      "Provably Beneficial AI",
+      "Inverse Reinforcement Learning for Value Inference",
+      "Cooperative AI",
+      "Safe Exploration in Reinforcement Learning",
+      "Robustness to Distributional Shift"
     ],
-    "link": "https://bqic.berkeley.edu/"
+    "link": "https://humancompatible.ai/"
   },
   {
-    "name": "Kavli Energy NanoScience Institute (ENSI)",
-    "mission": "Focuses on fundamental research at the intersection of nanoscience and energy science, exploring energy capture, storage, conversion, and efficiency. Light-matter interaction at the nanoscale is a core theme, encompassing photovoltaics, light harvesting, photocatalysis, and advanced optical probes.",
+    "name": "Berkeley DeepDrive (BDD)",
+    "mission": "To pursue state-of-the-art research in computer vision and machine learning for automotive applications, including autonomous driving.",
     "faculty": [
-      "Peidong Yang (Director)",
-      "Xiang Zhang (Key Faculty, Nanophotonics/Metamaterials)",
-      "Eli Yablonovitch (Key Faculty, Photovoltaics/Photonics)",
-      "Feng Wang (Key Faculty, Ultrafast Optics/2D Materials)",
-      "Naomi S. Ginsberg (Key Faculty, Ultrafast Imaging/Energy Transport)",
-      "Ali Javey (Key Faculty, Nanomaterials/Optoelectronics)",
-      "Michael F. Crommie (Key Faculty, Scanning Probe Microscopy/Spectroscopy)"
+      "Trevor Darrell (Director)",
+      "Fisher Yu",
+      "Kate Saenko (Affiliated, may vary)",
+      "Kurt Keutzer (Emeritus, Founding member)"
     ],
     "projects": [
-      "Nanophotonics and plasmonics for light concentration and manipulation",
-      "Next-generation solar energy conversion (perovskites, quantum dots, nanostructures)",
-      "Light-matter interactions in low-dimensional materials (2D materials, nanowires)",
-      "Ultrafast optical spectroscopy to probe energy transfer dynamics",
-      "Advanced optical imaging techniques for nanoscale systems",
-      "Photocatalysis and artificial photosynthesis",
-      "Development of novel optoelectronic materials and devices"
+      "BDD100K Dataset (Large-scale diverse driving video dataset)",
+      "Semantic and Instance Segmentation for Driving Scenes",
+      "Domain Adaptation for Autonomous Systems",
+      "Multi-Object Tracking and Prediction",
+      "Sensor Fusion (Camera, LiDAR)",
+      "Explainable Perception for Autonomous Driving"
     ],
-    "link": "https://kavli.berkeley.edu/"
+    "link": "https://bdd.berkeley.edu/"
+  },
+  {
+    "name": "RISELab (Real-Time Intelligence with Secure Execution)",
+    "mission": "To research and build platforms for real-time intelligent decisions on live data with strong security, privacy, and confidentiality guarantees.",
+    "faculty": [
+      "Ion Stoica",
+      "Joseph Gonzalez",
+      "Raluca Ada Popa",
+      "Joseph Hellerstein",
+      "Michael I. Jordan",
+      "Anthony D. Joseph"
+    ],
+    "projects": [
+      "Ray (Distributed execution framework for AI applications)",
+      "Clipper (Low-latency prediction serving system)",
+      "Secure Machine Learning Frameworks (e.g., Helen)",
+      "Real-time Machine Learning Inference and Serving",
+      "Federated Learning Systems",
+      "Data Systems for ML"
+    ],
+    "link": "https://riselab.berkeley.edu/"
+  },
+  {
+    "name": "AUTOLAB (Berkeley Laboratory for Automation Science and Engineering)",
+    "mission": "To conduct research in robotics and automation, with significant focus on robot learning, manipulation, medical robotics, and related AI applications.",
+    "faculty": [
+      "Ken Goldberg (Director)",
+      "Pieter Abbeel (Collaborator/Related Work)",
+      "Anca Dragan (Collaborator/Related Work)",
+      "Ron Fearing"
+    ],
+    "projects": [
+      "Dexterous Robotic Manipulation",
+      "Deep Learning for Robotic Grasping and Assembly",
+      "Cloud Robotics",
+      "Medical Robotics (da Vinci RAVEN)",
+      "Multi-Robot Systems",
+      "Human-Centered Automation"
+    ],
+    "link": "https://automation.berkeley.edu/"
+  },
+  {
+    "name": "CITRIS and the Banatao Institute (Center for Information Technology Research in the Interest of Society)",
+    "mission": "A multi-campus initiative focused on leveraging information technology for societal benefit. While broader than just AI, AI and Machine Learning are core enabling technologies across its focus areas (Health, People & Robots, Sustainable Infrastructures, etc.).",
+    "faculty": [
+      "Costas Spanos (Director, CITRIS & the Banatao Institute)",
+      "(Involves numerous faculty across UC Berkeley, Davis, Merced, Santa Cruz - AI researchers often participate in specific CITRIS initiatives)"
+    ],
+    "projects": [
+      "CITRIS Health Initiative (AI for diagnostics, personalized medicine)",
+      "People and Robots Initiative (includes HRI, AI ethics, robotics)",
+      "Sustainable Infrastructures (AI for energy efficiency, water management)",
+      "Edge Computing for AI Applications",
+      "Data Analytics for Social Good"
+    ],
+    "link": "https://citris-uc.org/"
   }
 ]
 ```

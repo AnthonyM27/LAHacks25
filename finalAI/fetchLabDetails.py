@@ -6,7 +6,7 @@ import json
 
 
 
-GEMINI_API_KEY = "AIzaSyCMF3sf2BD9f1AZ1FdHIJgVCj5f03CQUes"  # Load API key from environment
+GEMINI_API_KEY = "KEY"  # Load API key from environment
 
 
 class FetchLabDetailsAgent:
@@ -34,7 +34,8 @@ link: A link to their official webpage if available.
 Focus on accuracy and thoroughness, but keep each center’s summary concise and organized.
 Return this in JSON format.'''
             response = self.client.models.generate_content(
-                model="gemini-2.5-pro-exp-03-25",
+                # model="gemini-2.5-pro-exp-03-25",
+                model="gemini-2.0-flash",
                 contents=prompt,
             )
             json_data = self.save_professors(response.text)

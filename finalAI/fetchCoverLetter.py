@@ -2,7 +2,7 @@ import os
 import time
 from google import genai  # your Gemini client here
 
-GEMINI_API_KEY = "AIzaSyA3aikIB-WfqxjEWxC1bMUcOiqirRTkX24"  # Load API key from environment
+GEMINI_API_KEY = "KEY"  # Load API key from environment
 
 
 class FetchBairAgent:
