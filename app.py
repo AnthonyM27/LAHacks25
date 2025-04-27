@@ -103,16 +103,6 @@ def home():
     if 'last_reset' not in session:
         session['last_reset'] = datetime.now().isoformat()
 
-    # Check if today is after last week's Sunday
-    last_reset = datetime.fromisoformat(session['last_reset'])
-    now = datetime.now()
-
-    # Find the most recent Sunday
-    most_recent_sunday = now - timedelta(days=now.weekday() + 1) if now.weekday() != 6 else now
-    if last_reset < most_recent_sunday:
-        session['applications_submitted'] = 0
-        session['last_reset'] = now.isoformat()
-
     if request.method == 'POST':
         if 'set_goal' in request.form:
             goal = request.form.get('weekly_goal')
