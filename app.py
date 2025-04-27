@@ -186,16 +186,24 @@ def download_cover_letter():
 
 
 # General list of open lab positions
-@app.route('/find_positions', methods=['GET', 'POST'])
+@app.route('/find_positions', methods=['GET'])
 def find_positions():
-    labs = []
+    search_query = request.args.get('search_query', '').lower()
 
-    if request.method == 'POST':
-        topic = request.form['topic']
-        # Get the relevant labs based on the topic of interest
-        labs = scrape_labs_by_topic(topic)
+    # Example static list for now
+    all_positions = [
+        {'title': 'Research Assistant - AI and Robotics', 'lab': 'Berkeley AI Research Lab', 'link': 'https://example.com/ai-lab'},
+        {'title': 'Climate Data Analyst Intern', 'lab': 'Berkeley Climate Lab', 'link': 'https://example.com/climate-lab'},
+        {'title': 'Legal Research Fellow', 'lab': 'Berkeley Center for Law and Business', 'link': 'https://example.com/law-lab'},
+        {'title': 'Machine Learning Researcher', 'lab': 'BAIR (Berkeley Artificial Intelligence Research)', 'link': 'https://example.com/bair'},
+    ]
 
-    return render_template('find_positions.html', labs=labs)
+    if search_query:
+        positions = [pos for pos in all_positions if search_query in pos['title'].lower()]
+    else:
+        positions = all_positions
+
+    return render_template('find_positions.html', positions=positions)
 
 
 

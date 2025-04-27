@@ -3,30 +3,109 @@
 {% block title %}Find Positions - PaperTrail{% endblock %}
 
 {% block content %}
-    <div class="find-positions">
-        <h2>Find Research Opportunities</h2>
-        <p>Enter a topic of interest and relevant courses to find research labs or positions that match your profile.</p>
-        
-        <form method="POST" class="search-form">
-            <label for="topic">Topic of Interest:</label>
-            <input type="text" id="topic" name="topic" placeholder="Enter topic (e.g., AI, Robotics)" required>
-            
-            <label for="courses">Relevant Courses (comma-separated):</label>
-            <input type="text" id="courses" name="courses" placeholder="Enter courses (e.g., CS 188, EE 40)">
-            
-            <button type="submit">Search Labs</button>
-        </form>
+<style>
+    .positions-container {
+        display: flex;
+        height: 80vh;
+        margin-top: 40px;
+    }
 
-        {% if labs %}
-            <div class="lab-cards">
-                {% for lab in labs %}
-                    <div class="lab-card">
-                        <h3>{{ lab.name }}</h3>
-                        <a href="{{ lab.url }}" target="_blank">Visit Lab</a>
-                    </div>
-                {% endfor %}
-            </div>
-        {% endif %}
+    .positions-list {
+        width: 35%;
+        border-right: 1px solid #ccc;
+        overflow-y: auto;
+        padding: 20px;
+        background-color: #f9fafb;
+    }
+
+    .search-bar {
+        margin-bottom: 20px;
+    }
+
+    .search-bar input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    .positions-list ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .positions-list li {
+        padding: 15px 10px;
+        margin-bottom: 12px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    .positions-list li:hover {
+        background-color: #fdb41545;
+    }
+
+    .info-panel {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    .info-panel h2 {
+        margin-top: 0;
+        color: #003262;
+    }
+
+    .info-panel p {
+        margin: 10px 0;
+    }
+</style>
+
+<div class="positions-container">
+    <div class="positions-list">
+        <div class="search-bar">
+            <input type="text" id="searchInput" onkeyup="filterPositions()" placeholder="Search for positions...">
+        </div>
+        <ul id="positionsList">
+            {% for position in positions %}
+                <li onclick="showInfo('{{ position.title | escape }}', '{{ position.lab | escape }}', '{{ position.description | escape }}')">
+                    <strong>{{ position.title }}</strong><br>
+                    <small>{{ position.lab }}</small>
+                </li>
+            {% endfor %}
+        </ul>
     </div>
+
+    <div class="info-panel" id="info-panel">
+        <h2>Select a position to view details</h2>
+        <p>You'll see the full description and lab information here!</p>
+    </div>
+</div>
+
+<script>
+    function showInfo(title, lab, description) {
+        const panel = document.getElementById('info-panel');
+        panel.innerHTML = `
+            <h2>${title}</h2>
+            <h4>${lab}</h4>
+            <p>${description}</p>
+        `;
+    }
+
+    function filterPositions() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const listItems = document.getElementById('positionsList').getElementsByTagName('li');
+
+        for (let i = 0; i < listItems.length; i++) {
+            const item = listItems[i];
+            const text = item.textContent || item.innerText;
+            item.style.display = text.toLowerCase().includes(input) ? "" : "none";
+        }
+    }
+</script>
 
 {% endblock %}
