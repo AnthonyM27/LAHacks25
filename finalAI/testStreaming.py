@@ -1,5 +1,5 @@
 from flask import Flask, Response, render_template_string
-import google.generativeai as genai
+from google import genai
 
 app = Flask(__name__)
 
