@@ -215,9 +215,44 @@ def find_positions():
     return render_template('find_positions.html', labs=labs)
 
 
-@app.route('/application_tracker')
+# Store applications in memory for now (later you can use a database)
+applications = []
+
+@app.route('/application_tracker', methods=['GET'])
 def application_tracker():
-    return render_template('application_tracker.html')
+    return render_template('application_tracker.html', applications=applications)
+
+@app.route('/add_application', methods=['POST'])
+def add_application():
+    applied = request.form.get('applied')
+    status = request.form.get('status')
+    date = request.form.get('date')
+    position = request.form.get('position')
+    lab = request.form.get('lab')
+
+    new_application = {
+        'applied': applied,
+        'status': status,
+        'date': date,
+        'position': position,
+        'lab': lab
+    }
+
+    applications.append(new_application)
+    return redirect(url_for('application_tracker'))
+
+@app.route('/update_status', methods=['POST'])
+def update_status():
+    index = int(request.form.get('index'))
+    new_status = request.form.get('status')
+
+    if 0 <= index < len(applications):
+        applications[index]['status'] = new_status
+
+    return redirect(url_for('application_tracker'))
+
+
+
 
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = {'pdf'}

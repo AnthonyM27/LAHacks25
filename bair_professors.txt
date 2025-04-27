@@ -1,32 +1,26 @@
-Wisdom Agboh
-Yahav Avigal
-Daniel Brown
-Eric Chen
-Lawrence Yunliang Chen
-Zhengyu Chen
-Brenton Chu
-Vishnu Sashank Dorbala
-Letian Fu
-Alice Guan
-Simeon Nedelchev Sen Guneff
-Huang Huang
-Jeffrey Ichnowski
-Hao Kang
-Justin Kerr
-Archit Kulkarni
-Vishal Kumar
-Jennifer (Jenny) Li
-Zhihao Li
-Kai Lin
-Katherine (Kathy) Mao
-Animesh Murali
-Nikita Pavlov
-Lerrel Pinto
-Haozhi Qi
-Abhinav Raghunathan
-Daniel Seita
-Satvik Kumar Sharma
-Zhihan (Han) Wang
-Zhenjia Xu
-Jerry Zhang
-Tony G. Zhao
+[Your Name]
+[Your Address]
+[Your Phone Number]
+[Your Email Address]
+
+[Date]
+
+Hiring Committee
+Berkeley AI Research Lab (BAIR)
+University of California, Berkeley
+[Lab Address, if known, otherwise omit or use general university address]
+
+**Subject: Application for Electrical Engineering Assistant Position**
+
+Dear Hiring Committee,
+
+I am writing to express my enthusiastic interest in the Electrical Engineering Assistant position at the Berkeley AI Research Lab (BAIR), as advertised on [Platform where you saw the advertisement - e.g., BAIR website, university job board]. As a current Berkeley student deeply engaged in practical electrical systems design, I have been following BAIR's pioneering work with great admiration, particularly the recent advancements in bridging large-scale models with physical interaction, such as the developments showcased in the *RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control* project. The opportunity to contribute my hands-on electrical skills to support such groundbreaking research at the intersection of AI and robotics is incredibly exciting.
+
+For the past two years, I have been an active member of Berkeley's Formula SAE team, focusing specifically on the design, fabrication, and troubleshooting of the vehicle's complex electrical wiring harnesses. This role involved translating system requirements into robust physical implementations, managing power distribution, integrating various sensors and actuators, and ensuring signal integrity within a demanding, high-vibration environment. It required meticulous attention to detail, systematic debugging techniques, and a practical understanding of how electrical subsystems function within a larger, performance-critical system. This hands-on experience has equipped me with strong practical skills in circuit assembly, testing, and diagnosing electrical faults under pressure.
+
+The challenges I tackled in ensuring the reliability and performance of the Formula SAE car's electrical systems have honed my ability to approach hardware development with a focus on robustness and real-world applicability – principles I see reflected in BAIR's commitment to developing AI systems that operate effectively in complex environments. My proficiency in fabricating and debugging intricate wiring assemblies and integrating components could be directly applied to supporting the development, maintenance, and refinement of the sophisticated robotic platforms and experimental setups utilized across BAIR's research portfolio. I am confident I could quickly contribute to ensuring the hardware foundations for projects exploring robotic learning or human-robot interaction are reliable and efficient.
+
+Thank you for considering my application. My practical electrical engineering experience, combined with my passion for the innovative research conducted at BAIR, makes me eager to contribute to your team. I have attached my resume for your review and welcome the opportunity to discuss how my skills can support the groundbreaking work at the Berkeley AI Research Lab in more detail.
+
+Sincerely,
+[Your Name]
