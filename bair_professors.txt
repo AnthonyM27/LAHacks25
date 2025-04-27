@@ -1,19 +1,9 @@
 ```json
 [
   {
-    "name": "Space Sciences Laboratory (SSL)",
-    "mission": "Conducts research and develops instrumentation for space physics, planetary science, and astrophysics. SSL has been involved in numerous NASA Solar System missions, studying planets, moons, asteroids, comets, and the interplanetary medium.",
-    "link": "https://ssl.berkeley.edu/"
-  },
-  {
-    "name": "Center for Integrative Planetary Science (CIPS)",
-    "mission": "Fosters interdisciplinary research aimed at understanding the formation, evolution, composition, and dynamics of planets, including those in our Solar System and exoplanets. It brings together researchers from Astronomy, Earth & Planetary Science, and other departments.",
-    "link": "https://cips.berkeley.edu/"
-  },
-  {
-    "name": "Berkeley Geochronology Center (BGC)",
-    "mission": "An independent, non-profit research institution closely affiliated with UC Berkeley's Department of Earth and Planetary Science. BGC specializes in high-precision geochronology, including dating meteorites to understand the age and early history of the Solar System.",
-    "link": "https://bgc.berkeley.edu/"
+    "name": "Center for Risk Management Research (CRMR)",
+    "mission": "Focuses on promoting research in risk management, broadly defined, encompassing areas like financial risk modeling, asset management, insurance, and behavioral finance, often employing quantitative methodologies.",
+    "link": "https://haas.berkeley.edu/crmr/"
   }
 ]
 ```
