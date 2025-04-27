@@ -230,6 +230,10 @@ def allowed_file(filename):
 
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
+    if not 'user' in session:
+        return redirect(url_for('login'))
+
+    
     user_folder = os.path.join(app.config['UPLOAD_FOLDER'], session['user'])
     os.makedirs(user_folder, exist_ok=True)
 
