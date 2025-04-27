@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Find Positions - PaperTrail{% endblock %}
+
+{% block content %}
+    <div class="find-positions">
+        <h2>Find Research Groups</h2>
+        <p>Enter a topic of interest to find research labs that match your profile.</p>
+        
+        <form method="POST" class="search-form">
+            <label for="topic">Topic of Interest:</label>
+            <input type="text" id="topic" name="topic" placeholder="Enter topic (e.g., AI, Robotics)" required>
+            
+            <button type="submit">Search Labs</button>
+        </form>
+
+        {% if labs %}
+            <div class="lab-cards">
+                {% for lab in labs %}
+                    <div class="lab-card">
+                        <h3>{{ lab['name'] }}</h3>
+                        <p>{{ lab['mission'] }}</p>
+                        <a href="{{ lab['link'] }}" target="_blank">Visit Lab</a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

@@ -5,6 +5,7 @@ import os
 from werkzeug.utils import secure_filename
 from datetime import datetime, timedelta
 from finalAI.fetchCoverLetter import FetchBairAgent
+from finalAI.fetchRelevantLabs import FetchLabsAgent
 from pdfCreator import PDFGenerator
 
 app = Flask(__name__)
@@ -213,6 +214,18 @@ def find_positions():
         labs = scrape_labs_by_topic(topic)
 
     return render_template('find_positions.html', labs=labs)
+
+# Route for find_research_groups page
+@app.route('/find_research_groups', methods=['GET', 'POST'])
+def find_research_groups():
+    labs = []
+    if request.method == 'POST':
+        topic = request.form['topic']
+        # Get the relevant labs based on the topic of interest
+        agent = FetchLabsAgent()
+        labs = agent.run_once(topic=topic)
+
+    return render_template('find_research_groups.html', labs=labs)
 
 
 @app.route('/application_tracker')

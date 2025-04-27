@@ -6,21 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    <ul>
-        <li>This paper presents a method for automatically turning one kind of image into another kind (e.g., turning a map into an aerial photo, or a sketch into a realistic photo).</li>
-        <li>The goal is to have a single, general system that can handle many different image translation tasks without needing special design for each task.</li>
-        <li>The core idea uses a type of AI called Conditional Generative Adversarial Networks (cGANs).</li>
-        <li>A cGAN has two main parts that learn together by competing:
-            <ul>
-                <li>A <b>Generator</b>: Acts like an artist. It takes the input image (like a sketch) and tries to create the corresponding output image (like a photo).</li>
-                <li>A <b>Discriminator</b>: Acts like a critic. It looks at pairs of images (input + output) and tries to tell if the output image is the real one or a fake one made by the Generator.</li>
-            </ul>
-        </li>
-        <li>The term "Conditional" means the Generator doesn't just make any image; it makes an output image specifically based on the input image it received.</li>
-        <li>The Generator uses a specific structure ("U-Net") that helps transfer details from the input image to the output image, preventing excessive blurring.</li>
-        <li>The Discriminator uses a technique ("PatchGAN") where it judges small patches (sections) of the image for realism, rather than the whole image at once. This helps create better textures and details.</li>
-        <li>The system learns both from the Generator trying to fool the Discriminator and by comparing the generated image directly to the real target image (using "L1 loss") to ensure similarity.</li>
-        <li>The paper shows this method works well across various tasks (like coloring black and white images, turning sketches into photos, converting maps to aerial views, day to night conversion), producing visually appealing and often realistic results.</li>
-    </ul>
+    <div>
+        <strong>Berkeley Sensor & Actuator Center (BSAC)</strong>
+        <p>Mission/Focus: An industry-funded, university-based research cooperative focused on micro/nanotechnology, particularly Micro-Electro-Mechanical Systems (MEMS). It conducts interdisciplinary research on sensors, actuators, materials, and integrated systems interfacing electronics with the physical, chemical, and biological world.</p>
+        <p>Website: <a href="https://bsac.berkeley.edu/">https://bsac.berkeley.edu/</a></p>
+      </div>
+      
+      <div>
+        <strong>Berkeley Wireless Research Center (BWRC)</strong>
+        <p>Mission/Focus: Concentrates on research in integrated circuits, systems, and communication theory specifically for wireless communications and related applications. BWRC emphasizes innovation in low-power, high-performance radio frequency (RF), mixed-signal, and digital circuits and systems.</p>
+        <p>Website: <a href="https://bwrc.eecs.berkeley.edu/">https://bwrc.eecs.berkeley.edu/</a></p>
+      </div>
+      
+      <div>
+        <strong>SRC Center for Research on Intelligent Storage and Processing-in-memory (CRISP)</strong>
+        <p>Mission/Focus: Part of the SRC/DARPA Joint University Microelectronics Program (JUMP). CRISP focuses on developing novel hardware solutions, including emerging non-volatile memory technologies and processing-in-memory (PIM) architectures, to enable breakthroughs in data-intensive applications and artificial intelligence.</p>
+        <p>Website: <a href="https://crisp.eecs.berkeley.edu/">https://crisp.eecs.berkeley.edu/</a></p>
+      </div>
+      
+      <div>
+        <strong>Berkeley Device Modeling Center (BSIM Group)</strong>
+        <p>Mission/Focus: Develops industry-standard compact models (like BSIM) for semiconductor devices (MOSFETs) used globally in circuit simulation and design. Their research focuses on accurate modeling of advanced transistor physics for nanoscale technologies.</p>
+        <p>Website: <a href="https://bsim.berkeley.edu/">https://bsim.berkeley.edu/</a></p>
+      </div>
 </body>
 </html>
