@@ -1,9 +1,0 @@
-```json
-[
-  {
-    "name": "Center for Risk Management Research (CRMR)",
-    "mission": "Focuses on promoting research in risk management, broadly defined, encompassing areas like financial risk modeling, asset management, insurance, and behavioral finance, often employing quantitative methodologies.",
-    "link": "https://haas.berkeley.edu/crmr/"
-  }
-]
-```

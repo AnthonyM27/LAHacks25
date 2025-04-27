@@ -7,6 +7,13 @@ from datetime import datetime, timedelta
 from finalAI.fetchCoverLetter import FetchBairAgent
 from finalAI.fetchRelevantLabs import FetchLabsAgent
 from pdfCreator import PDFGenerator
+import time
+from reportlab.lib.enums import TA_JUSTIFY
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
+
 
 app = Flask(__name__)
 app.secret_key = 'LAHACKS2025'
@@ -97,13 +104,28 @@ from reportlab.pdfgen import canvas
 @app.route('/download_cover_letter', methods=['POST'])
 def download_cover_letter():
     content = request.form['cover_letter_content']
+    buffer = BytesIO()
+
+    print(content)
+
+    doc = SimpleDocTemplate(buffer,pagesize=letter,
+                        rightMargin=72,leftMargin=72,
+                        topMargin=72,bottomMargin=18)
+    Story=[]
+
 
     # Create a PDF in memory
-    buffer = BytesIO()
     c = canvas.Canvas(buffer, pagesize=letter)
     width, height = letter
 
     c.setFont("Helvetica", 10)
+    styles=getSampleStyleSheet()
+    for line in content.split('\n'):
+        Story.append(Paragraph(line, styles["Normal"]))
+        Story.append(Paragraph("\xa0", styles["Normal"]))
+
+    doc.build(Story)
+    
     margin = 10
     
     # Define a function to wrap the text
@@ -117,7 +139,8 @@ def download_cover_letter():
     # Add the text to the canvas
     c.drawText(text_object)
 
-    c.save()
+    
+    # c.save()
     buffer.seek(0)
 
     return send_file(buffer, as_attachment=True, download_name='cover_letter.pdf', mimetype='application/pdf')
